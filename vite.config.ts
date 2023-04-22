@@ -17,5 +17,10 @@ export default defineConfig({
     host: true,
     strictPort: true,
     port: Number(process.env.VITE_PORT) || 3000,
+  },
+  preview: {
+    port: Number(process.env.VITE_PORT) || 3000,
+    host: true,
+    strictPort: true,
   }
 })

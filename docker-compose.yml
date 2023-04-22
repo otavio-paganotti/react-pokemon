@@ -1,0 +1,33 @@
+version: "3.4"
+
+services:
+  app:
+    restart: unless-stopped
+    ports:
+      - ${VITE_PORT}:${VITE_PORT}
+      - 3000
+    env_file:
+      - .env
+    build:
+      context: .
+    environment:
+      - VITE_SECRET=${VITE_SECRET}
+
+  nginx:
+    restart: unless-stopped
+    image: staticfloat/nginx-certbot
+    ports:
+      - 80:80/tcp
+      - 443:443/tcp
+    environment:
+      - CERTBOT_DOMAIN=${CERTBOT_DOMAIN}
+      - CERTBOT_EMAIL=${CERTBOT_EMAIL}
+      - ENVSUBST_VARS=CERTBOT_DOMAIN
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - ./nginx.conf:/etc/nginx/user.conf.d/nginx.conf:ro
+    depends_on:
+      - app
+
+volumes:
+  letsencrypt:
