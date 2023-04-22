@@ -20,6 +20,11 @@
     "noFallthroughCasesInSwitch": true,
 
     "types": ["@types/node", "@types/react"],
+
+    /* Importing */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
