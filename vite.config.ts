@@ -10,4 +10,12 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     }
   },
+  server: {
+    watch: {
+      usePolling: true,
+    },
+    host: true,
+    strictPort: true,
+    port: Number(process.env.VITE_PORT) || 3000,
+  }
 })
