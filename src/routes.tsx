@@ -1,7 +1,7 @@
 import type { RouteObject } from 'react-router';
 import MainLayout from '@/layouts/Default';
-import Home from '@/pages/index/Index'
-import Pokemon from '@/pages/pokemon/Index'
+import Home from '@/pages/index/Index';
+import Pokemon from '@/pages/pokemon/Index';
 
 const routes: RouteObject[] = [
   {
@@ -15,8 +15,8 @@ const routes: RouteObject[] = [
       {
         index: false,
         path: ':id',
-        element: <Pokemon />
-      }
+        element: <Pokemon />,
+      },
     ],
   },
 ];

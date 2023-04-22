@@ -1,7 +1,7 @@
-export default function IndexPage () {
+export default function IndexPage() {
   return (
     <>
       <div>First index content</div>
     </>
-  )
+  );
 }

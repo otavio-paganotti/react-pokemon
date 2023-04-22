@@ -6,6 +6,6 @@ const App = () => {
   const content = useRoutes(routes);
 
   return content;
-}
+};
 
 export default App;
