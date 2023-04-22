@@ -29,3 +29,6 @@ yarn.lock
 
 # docker files
 docker-compose.override.yml
+
+# local env files
+.env.local
