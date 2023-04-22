@@ -1,7 +1,7 @@
 import type { RouteObject } from 'react-router';
 import MainLayout from '@/layouts/Default';
-import Home from '@/pages/index/index'
-import Pokemon from '@/pages/pokemon/index'
+import Home from '@/pages/index/Index'
+import Pokemon from '@/pages/pokemon/Index'
 
 const routes: RouteObject[] = [
   {
