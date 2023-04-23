@@ -1,67 +1,51 @@
-const Paginator = () => {
+import clsx from "clsx";
+
+const PageItem = ({ item, page, itemLabel, current }: {
+  item: number;
+  itemLabel: number | string;
+  page?: ((page: number) => void);
+  current?: boolean;
+}) => {
   return (
-    <>
-      <div className="flex justify-center">
-        <div>
-          <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-            <a
-              href="#"
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              <span className="sr-only">Previous</span>
-              &lt;-
-            </a>
-            <a
-              href="#"
-              aria-current="page"
-              className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              1
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              2
-            </a>
-            <a
-              href="#"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              3
-            </a>
-            <span className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">
-              ...
-            </span>
-            <a
-              href="#"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              8
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              9
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              10
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              <span className="sr-only">Next</span>
-              -&gt;
-            </a>
-          </nav>
-        </div>
+    <div className={clsx('page-item', current ? 'current' : '')} onClick={() => page && page(item)}>
+      {itemLabel}
+    </div>
+  )
+};
+
+const Paginator = ({
+  pagination,
+  page
+}: {
+  pagination: {
+    firstPage: number;
+    lastPage: number;
+    nextPages: number[];
+    prevPages: number[];
+    nextPage: number;
+    prevPage: number;
+    page: number;
+  },
+  page: ((page: number) => void)
+}) => {
+  return (
+    <div className="flex justify-center mb-4">
+      <div className="mb-4">
+        <nav className="flex gap-4" aria-label="Pagination">
+          <PageItem page={(item) => pagination.page > 1 && page(item)} item={pagination.firstPage} itemLabel="<<" />
+          <PageItem page={(item) => pagination.page > 0 && page(item)} item={pagination.prevPage} itemLabel="<" />
+          {pagination.prevPages.length > 0 && pagination.prevPages.map((item) => (
+            <PageItem item={item} itemLabel={item} page={page} />
+          ))}
+          <PageItem item={pagination.page} itemLabel={pagination.page} current={true} />
+          {pagination.nextPages.length > 0 && pagination.nextPages.map((item) => (
+            <PageItem item={item} itemLabel={item} page={page} />
+          ))}
+          <PageItem page={(item) => pagination.page < pagination.lastPage && page(item)} item={pagination.nextPage} itemLabel=">" />
+          <PageItem page={(item) => pagination.page < pagination.lastPage && page(item)} item={pagination.lastPage} itemLabel=">>" />
+        </nav>
       </div>
-    </>
+    </div>
   )
 }
 
