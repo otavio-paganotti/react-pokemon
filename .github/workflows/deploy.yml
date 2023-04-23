@@ -1,0 +1,59 @@
+name: Deploy and Publishes
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node: [ 18 ]
+
+    environment:
+      name: ${{ github.ref_name == 'main' && 'production'  || github.ref_name}}
+
+    name: Setup all needed for deploy ${{ github.ref_name }} repository
+
+    steps:
+      - name: ✅ Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 🥇 Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ secrets.BRANCH_NAME }}
+
+      - name: 💾 Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package.json')) }}
+
+      - name: 🐈 Yarn
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: ⚙️ Build
+        run: ./node_modules/cross-env/src/bin/cross-env.js yarn --ignore-engines --non-interactive --silent build --base=${{ secrets.BASE_URL }}
+        env:
+          NODE_OPTIONS: --max_old_space_size=1024
+
+      - name: 🚀 Deploy & Publishes
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages publish 'dist' --project-name=react-pokemon --branch=${{ secrets.BRANCH_NAME }}
+
+      - name: Fix permissions
+        run: |
+          sudo chown -R $(whoami):$(id -ng) .

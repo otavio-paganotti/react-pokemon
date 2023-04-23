@@ -33,6 +33,7 @@
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
     "devmoji": "^2.3.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
