@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react-swc';
@@ -22,5 +23,9 @@ export default defineConfig({
     port: Number(process.env.VITE_PORT) || 3000,
     host: true,
     strictPort: true,
+  },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
   },
 });
