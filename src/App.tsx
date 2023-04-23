@@ -1,6 +1,6 @@
 import routes from '@/routes';
 import { useRoutes } from 'react-router-dom';
-import '@/assets/css/main.scss';
+import '@/assets/sass/main.scss';
 
 const App = () => {
   const content = useRoutes(routes);
