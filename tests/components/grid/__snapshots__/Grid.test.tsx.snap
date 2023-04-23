@@ -1,10 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[` 1`] = `
+exports[`should render correctly the Grid component 1`] = `
 [
-  <div>
-    First index content
-  </div>,
   "Here we have a list!",
   <div
     className="flex justify-center"

@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render correctly the card component 1`] = `
+<div>
+  this is a card
+  <div>
+    This is a content
+  </div>
+</div>
+`;
