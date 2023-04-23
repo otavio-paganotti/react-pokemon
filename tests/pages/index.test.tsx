@@ -3,10 +3,10 @@ import renderer from 'react-test-renderer';
 import IndexComponent from '@/pages/index/Index';
 
 const toJson = (component: renderer.ReactTestRenderer) => {
-  const result = component.toJSON()
-  expect(result).toBeDefined()
-  expect(result).toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  const result = component.toJSON();
+  expect(result).toBeDefined();
+  expect(result).toBeInstanceOf(Array);
+  return result as renderer.ReactTestRendererJSON;
 };
 
 test('', () => {

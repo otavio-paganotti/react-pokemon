@@ -1,9 +1,5 @@
 const List = () => {
-  return (
-    <>
-      Here we have a list!
-    </>
-  )
+  return <>Here we have a list!</>;
 };
 
 export default List;

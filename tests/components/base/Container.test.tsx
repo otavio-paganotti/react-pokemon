@@ -3,18 +3,14 @@ import renderer from 'react-test-renderer';
 import Container from '@/components/base/Container';
 
 const toJson = (component: renderer.ReactTestRenderer) => {
-  const result = component.toJSON()
-  expect(result).toBeDefined()
-  expect(result).not.toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  const result = component.toJSON();
+  expect(result).toBeDefined();
+  expect(result).not.toBeInstanceOf(Array);
+  return result as renderer.ReactTestRendererJSON;
 };
 
 test('should render correctly the container component', () => {
-  const component = renderer.create(
-    <Container>
-      This is a content
-    </Container>
-  );
+  const component = renderer.create(<Container>This is a content</Container>);
 
   let tree = toJson(component);
   expect(tree).toMatchSnapshot();

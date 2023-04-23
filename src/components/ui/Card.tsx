@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface IProps {
   children: ReactNode;
@@ -9,12 +9,10 @@ const card = ({ children }: IProps) => {
     <>
       <div>
         this is a card
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default card
+export default card;

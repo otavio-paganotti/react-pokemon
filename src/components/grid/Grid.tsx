@@ -7,7 +7,7 @@ const Grid = () => {
       <List />
       <Paginator />
     </>
-  )
+  );
 };
 
 export default Grid;
