@@ -31,7 +31,7 @@ const Paginator = ({
   return (
     <div className="flex justify-center mb-4">
       <div className="mb-4">
-        <nav className="flex gap-4" aria-label="Pagination">
+        <nav className="flex md:gap-4" aria-label="Pagination">
           <PageItem page={(item) => pagination.page > 1 && page(item)} item={pagination.firstPage} itemLabel="<<" />
           <PageItem page={(item) => pagination.page > 0 && page(item)} item={pagination.prevPage} itemLabel="<" />
           {pagination.prevPages.length > 0 && pagination.prevPages.map((item) => (
