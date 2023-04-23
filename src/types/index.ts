@@ -3,6 +3,8 @@ export type Nullable<T = unknown> = T | null;
 export interface PokemonItem {
   name: string;
   url: string;
+  id: number;
+  content: Pokemon;
 }
 
 export interface Response<T> {
@@ -10,6 +12,15 @@ export interface Response<T> {
   next: Nullable<string>;
   previous: Nullable<string>;
   results: T[];
+  pagination: {
+    firstPage: number;
+    lastPage: number;
+    nextPage: number;
+    prevPage: number;
+    nextPages: number[];
+    prevPages: number[];
+    page: number;
+  }
 }
 
 export interface Sprites {
