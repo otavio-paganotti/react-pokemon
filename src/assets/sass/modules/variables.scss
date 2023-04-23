@@ -1,24 +1,3 @@
-$text-opacity: 1;
-$bg-opacity: 1;
-$ring-opacity: 1;
-
-$ring-color: rgb(59 130 246 / 0.5);
-$ring-offset-color: #fff;
-$ring-inset: inset;
-$ring-offset-width: 0px;
-$ring-offset-color: #fff;
-$ring-shadow: $ring-inset 0 0 0 calc(1px + $ring-offset-width) $ring-color;
-$ring-color: rgb(209 213 219 / $ring-opacity);
-$ring-offset-shadow: $ring-inset 0 0 0 $ring-offset-width $ring-offset-color;
-
-$shadow-color: #0000;
-$shadow-colored: 0 1px 2px 0 $shadow-color;
-$shadow: 0 0 #0000;
-$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-$shadow-sm-colored: 0 1px 2px 0 $shadow-sm;
-
-$space-x-reverse: 0;
-
-$primary: #ff0000;
-$secondary: #00ff00;
-$accent: #0000ff;
+$primary: #F65136;
+$secondary: #38B6FF;
+$white: #FFFFFF;
