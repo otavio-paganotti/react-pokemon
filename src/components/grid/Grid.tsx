@@ -4,8 +4,10 @@ import { useLoader } from '@/hooks';
 import { useEffect, useState } from 'react';
 import { PokemonItem, Response } from '@/types';
 
-const GenericGrid = <T extends PokemonItem>({ module }: {
-  module: (page?: number) => Promise<Response<T>>
+const GenericGrid = <T extends PokemonItem>({
+  module,
+}: {
+  module: (page?: number) => Promise<Response<T>>;
 }) => {
   const [initial] = useState<Response<T>>({
     count: 0,
@@ -19,20 +21,16 @@ const GenericGrid = <T extends PokemonItem>({ module }: {
       prevPage: 1,
       nextPages: [1],
       prevPages: [1],
-      page: 1
-    }
+      page: 1,
+    },
   });
 
-  const [
-    loader,
-    data,
-    isLoading,
-   ] = useLoader<Response<T>>(initial);
+  const [loader, data, isLoading] = useLoader<Response<T>>(initial);
 
   useEffect(() => {
     loader(module);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const page = (page: number) => {
@@ -45,11 +43,11 @@ const GenericGrid = <T extends PokemonItem>({ module }: {
     <div>
       {isLoading && <div>Loading...</div>}
       <div className="p-4 h-screen-minus-56 grid grid-cols-1 content-between gap-4">
-        {!isLoading && (<List items={data?.results} />)}
+        {!isLoading && <List items={data?.results} />}
         <Paginator pagination={data?.pagination} page={page} />
       </div>
     </div>
-  )
+  );
 };
 
 export default GenericGrid;

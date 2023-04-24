@@ -1,6 +1,6 @@
 // this function will be used for loading data from the server
 
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 
 export const useLoader = <T>(initialData?: T) => {
   const data = useRef<T>(initialData as T);
@@ -22,9 +22,9 @@ export const useLoader = <T>(initialData?: T) => {
       .finally(() => setIsLoading(false));
   };
 
-  return [
-    loader,
-    data.current,
-    isLoading
-  ] as [(callback: () => Promise<T>) => Promise<void> | undefined, T, boolean];
-}
+  return [loader, data.current, isLoading] as [
+    (callback: () => Promise<T>) => Promise<void> | undefined,
+    T,
+    boolean
+  ];
+};

@@ -11,13 +11,11 @@ describe('Pokemon', () => {
       count: 1118,
       next: 'https://pokeapi.co/api/v2/pokemon?offset=20&limit=20',
       previous: null,
-      results: [
-        pokemon
-      ],
+      results: [pokemon],
     };
 
     vi.mocked(Pokemon.getPokemons).mockResolvedValueOnce({
-      data: mockedResponse
+      data: mockedResponse,
     });
 
     await flushPromises();
@@ -25,7 +23,7 @@ describe('Pokemon', () => {
     const response = await Pokemon.getPokemons();
 
     expect(response).toMatchObject({
-      data: mockedResponse
+      data: mockedResponse,
     });
   });
 
@@ -33,7 +31,7 @@ describe('Pokemon', () => {
     const mockedResponse = pokemon.content;
 
     vi.mocked(Pokemon.getPokemon).mockResolvedValueOnce({
-      data: mockedResponse
+      data: mockedResponse,
     });
 
     await flushPromises();
@@ -41,7 +39,7 @@ describe('Pokemon', () => {
     const response = await Pokemon.getPokemon(1);
 
     expect(response).toMatchObject({
-      data: mockedResponse
+      data: mockedResponse,
     });
   });
 });

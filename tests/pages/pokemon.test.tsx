@@ -28,9 +28,7 @@ const onMounted = async () => {
   let component;
 
   await act(() => {
-    component = renderer.create(
-      <PokemonComponent />
-    )
+    component = renderer.create(<PokemonComponent />);
   });
 
   return toJson(component);
@@ -63,7 +61,7 @@ describe('Pokemon.tsx', () => {
     });
   });
 
-  test('should have 1 Card child element must be called', async () => {    
+  test('should have 1 Card child element must be called', async () => {
     expect(Card).toHaveBeenCalled();
   });
 });

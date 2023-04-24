@@ -20,7 +20,7 @@ export interface Response<T> {
     nextPages: number[];
     prevPages: number[];
     page: number;
-  }
+  };
 }
 
 export interface Sprites {

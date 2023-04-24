@@ -33,12 +33,7 @@ const page = (page: number) => {
 const onMounted = async (mock: IPagination) => {
   let component;
 
-  component = renderer.create(
-    <Paginator
-      page={page}
-      pagination={mock}
-    />
-  );
+  component = renderer.create(<Paginator page={page} pagination={mock} />);
 
   return toJson(component);
 };
@@ -58,7 +53,7 @@ describe('Paginator.tsx', () => {
 
   test('should have 5 PageItem child element must be called', async () => {
     expect(PageItem).toHaveBeenCalled();
-    
+
     expect(PageItem).toHaveBeenCalledTimes(5);
   });
 

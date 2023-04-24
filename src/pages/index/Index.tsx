@@ -7,9 +7,7 @@ export default function IndexPage() {
   return (
     <>
       <Container>
-        <Grid
-          module={Pokemon.getPokemons}
-        />
+        <Grid module={Pokemon.getPokemons} />
       </Container>
     </>
   );

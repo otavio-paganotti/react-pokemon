@@ -7,9 +7,7 @@ import { pokemon } from '../../mocks/pokemon';
 
 vi.mock('../../../src/components/ui/Card');
 
-const mockedResolvedResponse = [
-  pokemon
-];
+const mockedResolvedResponse = [pokemon];
 
 const toJson = (component: renderer.ReactTestRenderer) => {
   const result = component.toJSON();
@@ -24,11 +22,7 @@ const onMounted = async () => {
   let component;
 
   await act(async () => {
-    component = renderer.create(
-      <List
-        items={mockedResolvedResponse}
-      />
-    )
+    component = renderer.create(<List items={mockedResolvedResponse} />);
   });
 
   return toJson(component);
@@ -49,11 +43,14 @@ describe('List.tsx', () => {
 
   test('should have only 1 card child element must be called with correct props', () => {
     expect(Card).toHaveBeenCalled();
-    
+
     expect(Card).toHaveBeenCalledTimes(1);
 
-    expect(Card).toHaveBeenCalledWith({
-      item: pokemon
-    }, {});
+    expect(Card).toHaveBeenCalledWith(
+      {
+        item: pokemon,
+      },
+      {}
+    );
   });
 });

@@ -8,18 +8,16 @@ import { Pokemon } from '../../src/api';
 vi.mock('../../src/components/grid/Grid');
 
 const toJson = (component: renderer.ReactTestRenderer) => {
-  const result = component.toJSON()
-  expect(result).toBeDefined()
-  expect(result).not.toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  const result = component.toJSON();
+  expect(result).toBeDefined();
+  expect(result).not.toBeInstanceOf(Array);
+  return result as renderer.ReactTestRendererJSON;
 };
 
 const onMounted = async () => {
   let component;
 
-  component = renderer.create(
-    <IndexComponent />
-  );
+  component = renderer.create(<IndexComponent />);
 
   return toJson(component);
 };
@@ -42,8 +40,11 @@ describe('Index.tsx', () => {
 
     expect(Grid).toHaveBeenCalledTimes(1);
 
-    expect(Grid).toHaveBeenCalledWith({
-      module: Pokemon.getPokemons,
-    }, {});
+    expect(Grid).toHaveBeenCalledWith(
+      {
+        module: Pokemon.getPokemons,
+      },
+      {}
+    );
   });
 });

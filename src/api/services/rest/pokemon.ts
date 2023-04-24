@@ -75,7 +75,7 @@ const getPrevPages = (page: number, count: number): number[] => {
   }
 
   return [];
-}
+};
 
 export const getPokemon = async (id: number): Promise<Pokemon> => {
   const { data } = await http.get<Pokemon>(`/pokemon/${id}`);
@@ -87,14 +87,16 @@ export const getPokemons = async (page = 1): Promise<Response<PokemonItem>> => {
     params: {
       limit: 10,
       offset: 0 + (page - 1) * 10,
-    }
+    },
   });
 
-  const results = await Promise.all(data.results.map(async (item: PokemonItem) => ({
-    ...item,
-    id: extractId(item.url),
-    content: await getPokemon(extractId(item.url))
-  })));
+  const results = await Promise.all(
+    data.results.map(async (item: PokemonItem) => ({
+      ...item,
+      id: extractId(item.url),
+      content: await getPokemon(extractId(item.url)),
+    }))
+  );
 
   return {
     ...data,
@@ -106,7 +108,7 @@ export const getPokemons = async (page = 1): Promise<Response<PokemonItem>> => {
       prevPage: page !== 1 ? page - 1 : page,
       nextPages: getNextPages(page, data.count),
       prevPages: getPrevPages(page, data.count),
-      page
+      page,
     },
   };
 };

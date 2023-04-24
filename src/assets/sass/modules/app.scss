@@ -172,13 +172,13 @@
 }
 
 .page-item {
-  padding: .5rem 1rem .5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   background-color: $white;
   cursor: pointer;
 
   &:hover {
     background-color: $primary;
-    opacity: .87;
+    opacity: 0.87;
     color: $white;
   }
 
@@ -222,7 +222,7 @@
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  
+
   .md\:gap-4 {
     grid-gap: 1rem;
   }

@@ -16,13 +16,7 @@ vi.mock('react-router-dom');
 const onMounted = async () => {
   let component;
 
-  component = renderer.create(
-    <Card
-      item={pokemon}
-    >
-      This is a content
-    </Card>
-  );
+  component = renderer.create(<Card item={pokemon}>This is a content</Card>);
 
   return toJson(component);
 };

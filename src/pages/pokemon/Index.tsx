@@ -8,23 +8,23 @@ import { useParams } from 'react-router-dom';
 export default function PokemonPage() {
   const params = useParams();
 
-  const [
-    loader,
-    data,
-    isLoading
-  ] = useLoader<Pokemon>({} as Pokemon);
+  const [loader, data, isLoading] = useLoader<Pokemon>({} as Pokemon);
 
   useEffect(() => {
     loader(() => PokemonApi.getPokemon(Number(params.id)));
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
-  const getXAttack = () => data.stats?.find(stat => stat.stat.name === 'special-attack')?.base_stat;
-  const getXDefense = () => data.stats?.find(stat => stat.stat.name === 'special-defense')?.base_stat;
-  const getSpeed = () => data.stats?.find(stat => stat.stat.name === 'speed')?.base_stat;
+  const getXAttack = () =>
+    data.stats?.find((stat) => stat.stat.name === 'special-attack')?.base_stat;
+  const getXDefense = () =>
+    data.stats?.find((stat) => stat.stat.name === 'special-defense')?.base_stat;
+  const getSpeed = () =>
+    data.stats?.find((stat) => stat.stat.name === 'speed')?.base_stat;
 
-  const getUrl = (id: number) => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+  const getUrl = (id: number) =>
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
   return (
     <>
@@ -33,14 +33,15 @@ export default function PokemonPage() {
         <p className="text-center">This is the Pokemon page</p>
         {!isLoading && (
           <>
-            <Card item={
-              ({
+            <Card
+              item={{
                 id: data.id,
                 url: getUrl(data.id),
                 name: data.name,
-                content: data
-              })
-            } noLink={true}>
+                content: data,
+              }}
+              noLink={true}
+            >
               <div className="px-2 pb-2">
                 <p>Ataque especial: {getXAttack()}</p>
                 <p>Defesa especial: {getXDefense()}</p>

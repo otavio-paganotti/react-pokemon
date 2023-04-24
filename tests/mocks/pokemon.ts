@@ -16,24 +16,24 @@ export const pokemon: PokemonItem = {
       {
         ability: {
           name: 'overgrow',
-          url: 'https://pokeapi.co/api/v2/ability/65/'
+          url: 'https://pokeapi.co/api/v2/ability/65/',
         },
         is_hidden: false,
-        slot: 1
+        slot: 1,
       },
       {
         ability: {
           name: 'chlorophyll',
-          url: 'https://pokeapi.co/api/v2/ability/34/'
+          url: 'https://pokeapi.co/api/v2/ability/34/',
         },
         is_hidden: true,
-        slot: 3
+        slot: 3,
       },
     ],
     forms: [
       {
         name: 'bulbasaur',
-        url: 'https://pokeapi.co/api/v2/pokemon-form/1/'
+        url: 'https://pokeapi.co/api/v2/pokemon-form/1/',
       },
     ],
     game_indices: [
@@ -45,14 +45,14 @@ export const pokemon: PokemonItem = {
       {
         item: {
           name: 'master-ball',
-          url: 'https://pokeapi.co/api/v2/item/1/'
+          url: 'https://pokeapi.co/api/v2/item/1/',
         },
         version_details: [
           {
             rarity: 5,
             version: {
               name: 'red',
-              url: 'https://pokeapi.co/api/v2/version/1/'
+              url: 'https://pokeapi.co/api/v2/version/1/',
             },
           },
         ],
@@ -63,18 +63,18 @@ export const pokemon: PokemonItem = {
       {
         move: {
           name: 'razor-wind',
-          url: 'https://pokeapi.co/api/v2/move/13/'
+          url: 'https://pokeapi.co/api/v2/move/13/',
         },
         version_group_details: [
           {
             level_learned_at: 0,
             move_learn_method: {
               name: 'machine',
-              url: 'https://pokeapi.co/api/v2/move-learn-method/4/'
+              url: 'https://pokeapi.co/api/v2/move-learn-method/4/',
             },
             version_group: {
               name: 'red-blue',
-              url: 'https://pokeapi.co/api/v2/version-group/1/'
+              url: 'https://pokeapi.co/api/v2/version-group/1/',
             },
           },
         ],
@@ -82,10 +82,11 @@ export const pokemon: PokemonItem = {
     ],
     species: {
       name: 'bulbasaur',
-      url: 'https://pokeapi.co/api/v2/pokemon-species/1/'
+      url: 'https://pokeapi.co/api/v2/pokemon-species/1/',
     },
     sprites: {
-      back_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png',
+      back_default:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png',
     },
     stats: [
       {
@@ -93,7 +94,7 @@ export const pokemon: PokemonItem = {
         effort: 0,
         stat: {
           name: 'hp',
-          url: 'https://pokeapi.co/api/v2/stat/1/'
+          url: 'https://pokeapi.co/api/v2/stat/1/',
         },
       },
     ],
@@ -102,10 +103,10 @@ export const pokemon: PokemonItem = {
         slot: 1,
         type: {
           name: 'grass',
-          url: 'https://pokeapi.co/api/v2/type/12/'
+          url: 'https://pokeapi.co/api/v2/type/12/',
         },
       },
     ],
     past_types: [],
-  }
+  },
 };

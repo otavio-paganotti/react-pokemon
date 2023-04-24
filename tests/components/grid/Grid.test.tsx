@@ -9,19 +9,17 @@ vi.mock('../../../src/api');
 vi.mock('react-router-dom');
 
 const toJson = (component: renderer.ReactTestRenderer) => {
-  const result = component.toJSON()
-  expect(result).toBeDefined()
-  expect(result).not.toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  const result = component.toJSON();
+  expect(result).toBeDefined();
+  expect(result).not.toBeInstanceOf(Array);
+  return result as renderer.ReactTestRendererJSON;
 };
 
 const mockedResolvedResponse = {
   count: 0,
   next: null,
   previous: null,
-  results: [
-    pokemon
-  ],
+  results: [pokemon],
   pagination: {
     firstPage: 1,
     lastPage: 1,
@@ -29,21 +27,19 @@ const mockedResolvedResponse = {
     prevPage: 1,
     nextPages: [],
     prevPages: [],
-    page: 1
-  }
+    page: 1,
+  },
 };
 
 const onMounted = async () => {
-  vi.mocked(PokemonApi.getPokemons).mockResolvedValueOnce(mockedResolvedResponse);
-  
+  vi.mocked(PokemonApi.getPokemons).mockResolvedValueOnce(
+    mockedResolvedResponse
+  );
+
   let component;
 
   await act(async () => {
-    component = renderer.create(
-      <Grid
-        module={PokemonApi.getPokemons}
-      />
-    )
+    component = renderer.create(<Grid module={PokemonApi.getPokemons} />);
   });
 
   return toJson(component);
@@ -67,7 +63,9 @@ describe('Grid.tsx', () => {
   });
 
   test('should Grid component have a div with class "p-4 h-screen-minus-56 grid grid-cols-1 content-between gap-4"', () => {
-    expect(tree.children[0].props.className).toBe('p-4 h-screen-minus-56 grid grid-cols-1 content-between gap-4');
+    expect(tree.children[0].props.className).toBe(
+      'p-4 h-screen-minus-56 grid grid-cols-1 content-between gap-4'
+    );
   });
 
   test('should list section have a list and a pagination component', () => {

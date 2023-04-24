@@ -11,11 +11,7 @@ const toJson = (component: renderer.ReactTestRenderer) => {
 };
 
 const onMounted = async () => {
-  const component = renderer.create(
-    <Container>
-      This is a content
-    </Container>
-  );
+  const component = renderer.create(<Container>This is a content</Container>);
 
   return toJson(component);
 };

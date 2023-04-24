@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 ReactDOM.createRoot(
-  document.getElementById('root') as Element | DocumentFragment,
+  document.getElementById('root') as Element | DocumentFragment
 ).render(
   <BrowserRouter>
     <App />
