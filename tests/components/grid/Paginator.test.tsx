@@ -8,10 +8,10 @@ import { IPagination } from '../../../src/types';
 vi.mock('../../../src/components/grid/PageItem');
 
 const toJson = (component: renderer.ReactTestRenderer) => {
-  const result = component.toJSON()
-  expect(result).toBeDefined()
-  expect(result).not.toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  const result = component.toJSON();
+  expect(result).toBeDefined();
+  expect(result).not.toBeInstanceOf(Array);
+  return result as renderer.ReactTestRendererJSON;
 };
 
 const paginationMock = {

@@ -4,10 +4,10 @@ import Container from '../../../src/components/base/Container';
 import { describe, test, expect, beforeEach, vi } from 'vitest';
 
 const toJson = (component: renderer.ReactTestRenderer) => {
-  const result = component.toJSON()
-  expect(result).toBeDefined()
-  expect(result).not.toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  const result = component.toJSON();
+  expect(result).toBeDefined();
+  expect(result).not.toBeInstanceOf(Array);
+  return result as renderer.ReactTestRendererJSON;
 };
 
 const onMounted = async () => {
