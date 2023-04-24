@@ -22,6 +22,8 @@ export default function PokemonPage() {
   const getXDefense = () => data.stats?.find(stat => stat.stat.name === 'special-defense')?.base_stat;
   const getSpeed = () => data.stats?.find(stat => stat.stat.name === 'speed')?.base_stat;
 
+  const getUrl = (id: number) => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+
   return (
     <>
       <div className="p-4 max-w-3xl mx-auto grid grid-cols-1 gap-4">
@@ -32,7 +34,7 @@ export default function PokemonPage() {
             <Card item={
               ({
                 id: data.id,
-                url: 'dsadasdasdsa/1',
+                url: getUrl(data.id),
                 name: data.name,
                 content: data
               })
