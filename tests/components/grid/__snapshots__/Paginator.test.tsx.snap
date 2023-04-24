@@ -1,79 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render correctly the Paginator component 1`] = `
+exports[`Paginator.tsx > should render correctly the Paginator component and take a snapshot 1`] = `
 <div
-  className="flex justify-center"
+  className="flex justify-center mb-4"
 >
-  <div>
+  <div
+    className="mb-4"
+  >
     <nav
       aria-label="Pagination"
-      className="isolate inline-flex -space-x-px rounded-md shadow-sm"
-    >
-      <a
-        className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-        href="#"
-      >
-        <span
-          className="sr-only"
-        >
-          Previous
-        </span>
-        &lt;-
-      </a>
-      <a
-        aria-current="page"
-        className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        href="#"
-      >
-        1
-      </a>
-      <a
-        className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-        href="#"
-      >
-        2
-      </a>
-      <a
-        className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-        href="#"
-      >
-        3
-      </a>
-      <span
-        className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0"
-      >
-        ...
-      </span>
-      <a
-        className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-        href="#"
-      >
-        8
-      </a>
-      <a
-        className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-        href="#"
-      >
-        9
-      </a>
-      <a
-        className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-        href="#"
-      >
-        10
-      </a>
-      <a
-        className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-        href="#"
-      >
-        <span
-          className="sr-only"
-        >
-          Next
-        </span>
-        -&gt;
-      </a>
-    </nav>
+      className="flex md:gap-4"
+    />
   </div>
 </div>
 `;

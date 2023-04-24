@@ -1,10 +1,50 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render correctly the card component 1`] = `
-<div>
-  this is a card
-  <div>
-    This is a content
+exports[`Card.tsx > should render correctly the Paginator component and take a snapshot 1`] = `
+<div
+  className="bg-white"
+>
+  <div
+    className="flex justify-center"
+  >
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    />
+  </div>
+  <div
+    className="p-4 flex flex-col gap-4"
+  >
+    <div
+      className="bg-primary"
+    >
+      <div
+        className="p-2 flex justify-between"
+      >
+        <h2
+          className="font-bold capitalize"
+        >
+          bulbasaur
+        </h2>
+        <span>
+          HP: 
+          45
+        </span>
+      </div>
+      <div
+        className="px-2 pt-2 pb-2"
+      >
+        <p>
+          Ataque: 
+        </p>
+        <p>
+          Defesa: 
+        </p>
+      </div>
+      This is a content
+    </div>
+    <div
+      className="flex justify-center"
+    />
   </div>
 </div>
 `;

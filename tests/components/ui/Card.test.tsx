@@ -1,6 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Card from '@/components/ui/Card';
+import Card from '../../../src/components/ui/Card';
+import { describe, beforeEach, expect, test, vi } from 'vitest';
+import { pokemon } from '../../mocks/pokemon';
 
 const toJson = (component: renderer.ReactTestRenderer) => {
   const result = component.toJSON()
@@ -9,16 +11,32 @@ const toJson = (component: renderer.ReactTestRenderer) => {
   return result as renderer.ReactTestRendererJSON
 };
 
-test('should render correctly the card component', () => {
-  const component = renderer.create(
-    <Card>
+vi.mock('react-router-dom');
+
+const onMounted = async () => {
+  let component;
+
+  component = renderer.create(
+    <Card
+      item={pokemon}
+    >
       This is a content
     </Card>
   );
 
-  let tree = toJson(component);
-  expect(tree).toMatchSnapshot();
+  return toJson(component);
+};
 
-  expect(tree.children).toHaveLength(2);
-  expect(tree.children[1].children[0]).toBe('This is a content');
+describe('Card.tsx', () => {
+  let tree;
+
+  beforeEach(async () => {
+    vi.clearAllMocks();
+
+    tree = await onMounted();
+  });
+
+  test('should render correctly the Paginator component and take a snapshot', () => {
+    expect(tree).toMatchSnapshot();
+  });
 });

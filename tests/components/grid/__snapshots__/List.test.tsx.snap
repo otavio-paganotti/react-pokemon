@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render correctly the List component 1`] = `"Here we have a list!"`;
+exports[`List.tsx > should render correctly the List component and take a snapshot 1`] = `
+<div
+  className="grid grid-cols-1 md:grid-cols-4 gap-4"
+/>
+`;

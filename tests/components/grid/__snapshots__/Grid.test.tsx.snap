@@ -1,82 +1,102 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render correctly the Grid component 1`] = `
-[
-  "Here we have a list!",
+exports[`Grid.tsx > should render correctly the Grid component and take a snapshot 1`] = `
+<div>
   <div
-    className="flex justify-center"
+    className="p-4 h-screen-minus-56 grid grid-cols-1 content-between gap-4"
   >
-    <div>
-      <nav
-        aria-label="Pagination"
-        className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+    <div
+      className="grid grid-cols-1 md:grid-cols-4 gap-4"
+    >
+      <div
+        className="bg-white"
       >
-        <a
-          className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-          href="#"
+        <div
+          className="flex justify-center"
         >
-          <span
-            className="sr-only"
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+          />
+        </div>
+        <div
+          className="p-4 flex flex-col gap-4"
+        >
+          <div
+            className="bg-primary"
           >
-            Previous
-          </span>
-          &lt;-
-        </a>
-        <a
-          aria-current="page"
-          className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          href="#"
-        >
-          1
-        </a>
-        <a
-          className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-          href="#"
-        >
-          2
-        </a>
-        <a
-          className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-          href="#"
-        >
-          3
-        </a>
-        <span
-          className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0"
-        >
-          ...
-        </span>
-        <a
-          className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-          href="#"
-        >
-          8
-        </a>
-        <a
-          className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-          href="#"
-        >
-          9
-        </a>
-        <a
-          className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-          href="#"
-        >
-          10
-        </a>
-        <a
-          className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-          href="#"
-        >
-          <span
-            className="sr-only"
-          >
-            Next
-          </span>
-          -&gt;
-        </a>
-      </nav>
+            <div
+              className="p-2 flex justify-between"
+            >
+              <h2
+                className="font-bold capitalize"
+              >
+                bulbasaur
+              </h2>
+              <span>
+                HP: 
+                45
+              </span>
+            </div>
+            <div
+              className="px-2 pt-2 pb-2"
+            >
+              <p>
+                Ataque: 
+              </p>
+              <p>
+                Defesa: 
+              </p>
+            </div>
+          </div>
+          <div
+            className="flex justify-center"
+          />
+        </div>
+      </div>
     </div>
-  </div>,
-]
+    <div
+      className="flex justify-center mb-4"
+    >
+      <div
+        className="mb-4"
+      >
+        <nav
+          aria-label="Pagination"
+          className="flex md:gap-4"
+        >
+          <div
+            className="page-item"
+            onClick={[Function]}
+          >
+            &lt;&lt;
+          </div>
+          <div
+            className="page-item"
+            onClick={[Function]}
+          >
+            &lt;
+          </div>
+          <div
+            className="page-item current"
+            onClick={[Function]}
+          >
+            1
+          </div>
+          <div
+            className="page-item"
+            onClick={[Function]}
+          >
+            &gt;
+          </div>
+          <div
+            className="page-item"
+            onClick={[Function]}
+          >
+            &gt;&gt;
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
 `;

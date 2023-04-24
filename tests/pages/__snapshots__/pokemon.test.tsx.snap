@@ -1,7 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[` 1`] = `
-<div>
-  First :id content. ID = 
+exports[`Pokemon.tsx > should render correctly the Pokemon component and take a snapshot 1`] = `
+<div
+  className="p-4 max-w-3xl mx-auto grid grid-cols-1 gap-4"
+>
+  <h1
+    className="text-4xl text-center"
+  >
+    Pokemon
+  </h1>
+  <p
+    className="text-center"
+  >
+    This is the Pokemon page
+  </p>
 </div>
 `;
