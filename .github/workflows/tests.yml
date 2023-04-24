@@ -6,9 +6,9 @@ on:
     branches: [main]
     types:
       - completed
-  paths:
-    - 'src/**'
-    - 'tests/**'
+    paths:
+      - 'src/**'
+      - 'tests/**'
 
 jobs:
   ci:

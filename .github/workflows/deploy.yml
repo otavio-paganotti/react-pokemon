@@ -5,8 +5,8 @@ on:
     branches:
       - main
       - staging
-  paths:
-    - 'src/**'
+    paths:
+      - 'src/**'
 
 jobs:
   ci:
