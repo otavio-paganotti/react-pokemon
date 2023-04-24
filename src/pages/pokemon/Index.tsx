@@ -16,6 +16,8 @@ export default function PokemonPage() {
 
   useEffect(() => {
     loader(() => PokemonApi.getPokemon(Number(params.id)));
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
   const getXAttack = () => data.stats?.find(stat => stat.stat.name === 'special-attack')?.base_stat;

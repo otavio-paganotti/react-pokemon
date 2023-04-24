@@ -103,4 +103,4 @@ export interface IPagination {
   nextPage: number;
   prevPage: number;
   page: number;
-};
+}

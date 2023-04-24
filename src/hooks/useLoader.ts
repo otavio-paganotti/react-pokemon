@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-export const useLoader = <T extends unknown>(initialData?: T) => {
+export const useLoader = <T>(initialData?: T) => {
   const data = useRef<T>(initialData as T);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);

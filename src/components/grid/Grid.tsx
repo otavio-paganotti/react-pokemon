@@ -31,6 +31,8 @@ const GenericGrid = <T extends PokemonItem>({ module }: {
 
   useEffect(() => {
     loader(module);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const page = (page: number) => {
