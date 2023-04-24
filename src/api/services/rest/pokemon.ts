@@ -45,11 +45,19 @@ const getNextPages = (page: number, count: number): number[] => {
   return [];
 };
 
-const getPrevPages = (page: number): number[] => {
+const getPrevPages = (page: number, count: number): number[] => {
   // get prev 4 pages if page is lastPage
   // get prev 2 pages if page is lte lastPage - 1
 
   const pages = [];
+
+  if (page === Math.ceil(count / 10)) {
+    pages.push(page - 4);
+    pages.push(page - 3);
+    pages.push(page - 2);
+    pages.push(page - 1);
+    return pages;
+  }
 
   if (page === 1) {
     return [];
@@ -94,10 +102,10 @@ export const getPokemons = async (page = 1): Promise<Response<PokemonItem>> => {
     pagination: {
       firstPage: 1,
       lastPage: Math.ceil(data.count / 10),
-      nextPage: page + 1,
-      prevPage: page - 1,
+      nextPage: page === data.count ? page + 1 : page,
+      prevPage: page !== 1 ? page - 1 : page,
       nextPages: getNextPages(page, data.count),
-      prevPages: getPrevPages(page),
+      prevPages: getPrevPages(page, data.count),
       page
     },
   };
