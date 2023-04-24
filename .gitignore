@@ -33,3 +33,6 @@ docker-compose.override.yml
 
 # local env files
 .env.local
+
+# coverage files
+coverage
