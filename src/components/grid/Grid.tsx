@@ -40,15 +40,13 @@ const GenericGrid = <T extends PokemonItem>({ module }: {
   };
 
   return (
-    <>
-      <div>
-        {isLoading && <div>Loading...</div>}
-        <div className="p-4 h-screen-minus-56 grid grid-cols-1 content-between gap-4">
-          {!isLoading && (<><List items={data?.results} /></>)}
-          <Paginator pagination={data?.pagination} page={page} />
-        </div>
+    <div>
+      {isLoading && <div>Loading...</div>}
+      <div className="p-4 h-screen-minus-56 grid grid-cols-1 content-between gap-4">
+        {!isLoading && (<List items={data?.results} />)}
+        <Paginator pagination={data?.pagination} page={page} />
       </div>
-    </>
+    </div>
   )
 };
 
