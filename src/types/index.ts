@@ -94,3 +94,13 @@ export interface Pokemon {
   types: Type[];
   weight: number;
 }
+
+export interface IPagination {
+  firstPage: number;
+  lastPage: number;
+  nextPages: number[];
+  prevPages: number[];
+  nextPage: number;
+  prevPage: number;
+  page: number;
+};
