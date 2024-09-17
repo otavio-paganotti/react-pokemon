@@ -30,7 +30,10 @@ export default function PokemonPage() {
     <>
       <div className="p-4 max-w-3xl mx-auto grid grid-cols-1 gap-4">
         <h1 className="text-4xl text-center">Pokemon</h1>
-        <p className="text-center">This is the Pokemon page</p>
+        <p className="text-center">
+          This is the <span className="hidden lg:inline-block">P</span>
+          <span className="inline-block lg:hidden">B</span>okemon page
+        </p>
         {!isLoading && (
           <>
             <Card

@@ -14,6 +14,10 @@
   display: inline-flex;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .hidden {
   display: none;
 }
@@ -225,5 +229,15 @@
 
   .md\:gap-4 {
     grid-gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:inline-block {
+    display: inline-block;
   }
 }
